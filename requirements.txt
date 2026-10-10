@@ -1,0 +1,8 @@
+pymupdf
+pytesseract
+Pillow
+sentence-transformers==6.1.0
+chromadb
+groq
+python-dotenv
+markdown-it-py

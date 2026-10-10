@@ -1,0 +1,57 @@
+ASHOKAN INSCRIPTIONS: BEGINNER-FRIENDLY UPSC NOTES
+==================================================
+
+1. What are Ashokan inscriptions?
+- Royal messages issued under the Mauryan emperor Ashoka (third century BCE), engraved on rocks, pillars, and cave surfaces.
+- They are often called edicts. Many identify the ruler by titles such as Devanampiya Piyadasi (“Beloved of the Gods, He Who Looks with Affection”); a few inscriptions name Ashoka directly.
+- They were placed at locations across the subcontinent and beyond, making them an important early example of royal communication through inscriptions.
+
+2. Major types
+- Major Rock Edicts: a group conventionally numbered I–XIV; topics include Dhamma, administration, welfare, and the consequences of the Kalinga war.
+- Minor Rock Edicts: shorter messages, including statements about Ashoka’s commitment to the Buddha’s teaching.
+- Pillar Edicts: proclamations engraved on polished stone pillars; several discuss Dhamma and officials’ responsibilities.
+- Separate Kalinga Edicts: messages associated with Dhauli and Jaugada, addressing officials and the treatment of people in the newly conquered region.
+- Cave inscriptions: for example, Ashoka’s Barabar cave records dedicate caves to the Ajivikas. These show royal patronage beyond the public Dhamma edicts.
+
+3. Languages and scripts
+- Most inscriptions use regional forms of Prakrit and the Brahmi script. The wording and dialect vary by region.
+- In the north-west, Prakrit was also written in Kharosthi, a script written from right to left; examples include Shahbazgarhi and Mansehra.
+- A small number of north-western inscriptions use Greek and/or Aramaic language and scripts, reflecting the region’s diverse population and historical connections.
+- Language and script are different: Prakrit is a language; Brahmi and Kharosthi are scripts.
+
+4. What they reveal about Mauryan administration
+- The spread and placement of inscriptions show the Mauryan state’s effort to communicate royal policies across distant regions. Their presence is evidence of reach and communication, but by itself does not prove equally strong day-to-day control everywhere.
+- They name officials and duties. Major Rock Edict III refers to Yuktas, Rajukas, and Pradesikas undertaking tours; Major Rock Edict V describes the appointment of Dhamma-Mahamatras.
+- Pillar Edict IV describes Rajukas exercising responsibilities that included public welfare and justice, indicating delegated authority.
+- Major Rock Edict II describes medical provision for people and animals and the planting of medicinal herbs; it also refers to wells and trees along roads.
+- Separate Kalinga Edicts emphasise humane and fair treatment by officials, especially toward people in the conquered province.
+
+5. Ashoka’s Dhamma and ethical principles
+- Dhamma was Ashoka’s public ethical policy. It drew on moral ideas shared across traditions and should not be treated as identical to Buddhist doctrine, although some inscriptions discuss Ashoka’s personal Buddhist commitment.
+- Key principles include respect for parents and elders; generosity toward friends, servants, Brahmanas and Sramanas; compassion; restraint in killing animals; truthful and restrained speech; and respect for different sects.
+- Ashoka encouraged moral persuasion and personal conduct. The edicts do not describe Dhamma as a single compulsory religious creed.
+- Major Rock Edict XIII expresses Ashoka’s remorse over the suffering caused by the Kalinga war and his preference for conquest through Dhamma.
+
+6. Historical importance
+- These are contemporary royal records and among the earliest decipherable inscriptions available from India.
+- They help reconstruct Ashoka’s policies, official terminology, ideas of kingship, welfare measures, communication networks, and the languages and scripts used across different regions.
+- They provide direct evidence for how the ruler wished his policies and public image to be understood.
+- Their locations, wording, and regional variants can be compared with archaeology and other literary and epigraphic sources.
+
+7. Limitations as historical sources
+- They present a ruler’s official perspective and stated aims. A policy being proclaimed does not prove it was consistently carried out or accepted by everyone.
+- Their coverage is uneven. The presence of an edict marks communication or influence, but does not alone establish uniform administrative control over the surrounding territory.
+- They focus heavily on Ashoka, royal policy, and Dhamma; they are not a complete account of Mauryan society, economy, local administration, or the reigns of other Mauryan rulers.
+- Some inscriptions are damaged, incomplete, or differ in wording. Regional language and script differences also require careful interpretation.
+- Historians should cross-check them with archaeological evidence and other sources rather than treating royal claims as neutral descriptions.
+
+QUICK REVISION
+- Form: rock, pillar, and cave inscriptions.
+- Main language/script: regional Prakrit in Brahmi; north-western Prakrit also appears in Kharosthi; some records use Greek or Aramaic.
+- Main value: first-hand evidence for Ashoka’s public policies and Mauryan communication and administration.
+- Main caution: royal proclamations show what Ashoka wanted to communicate, not automatically what happened everywhere in practice.
+
+FURTHER READING
+- Archaeological Survey of India, BharatSHRI, “Epigraphy”: https://bharatshri.asi.gov.in/AboutEpigraphy?lang=en
+- UNESCO World Heritage Centre, “Serial nomination for Ashokan Edict sites along the Mauryan Routes”: https://whc.unesco.org/en/tentativelists/6803/
+- Namita Sugandhi, “Context, Content, and Composition: Questions of Intended Meaning and the Asokan Edicts,” Asian Perspectives 42(2), 2003: https://doi.org/10.1353/asi.2003.0051

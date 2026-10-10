@@ -1,0 +1,22 @@
+# Local credentials
+.env
+data/.env
+
+# Python environments and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local generated RAG artifacts
+/data/chroma_db/
+/data/extracted_text.txt
+/data/chunks.json
+/data/embeddings.json
+
+# Local logs
+*.log
