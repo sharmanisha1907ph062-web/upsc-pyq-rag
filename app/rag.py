@@ -7,7 +7,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from groq import Groq
 
-from retrieve import DEFAULT_QUESTION, search_chunks
+if __package__:
+    from .retrieve import DEFAULT_QUESTION, search_chunks
+else:
+    from retrieve import DEFAULT_QUESTION, search_chunks
 
 
 PROJECT_FOLDER = Path(__file__).resolve().parent.parent

@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: free
     buildCommand: "pip install -r requirements.txt && python app/ingest_study_material.py"
-    startCommand: "python app/web.py --host 0.0.0.0 --port $PORT"
+    startCommand: "python -m app.web --host 0.0.0.0 --port $PORT"
     healthCheckPath: /
     envVars:
       - key: GROQ_API_KEY
