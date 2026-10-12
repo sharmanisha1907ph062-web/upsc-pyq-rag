@@ -5,6 +5,7 @@ from collections import deque
 import html
 import math
 import os
+import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from html.parser import HTMLParser
 from pathlib import Path
@@ -15,6 +16,12 @@ from urllib.parse import urlsplit
 
 from dotenv import load_dotenv
 from markdown_it import MarkdownIt
+
+# Resolve sibling modules from this file's location, independent of the
+# process working directory or whether the app is started as a script.
+APP_FOLDER = Path(__file__).resolve().parent
+if str(APP_FOLDER) not in sys.path:
+    sys.path.insert(0, str(APP_FOLDER))
 
 from rag import ENV_FILE, generate_answer
 from retrieve import search_chunks
