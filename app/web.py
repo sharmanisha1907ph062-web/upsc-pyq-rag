@@ -1,11 +1,15 @@
 """Small local web interface for the existing UPSC RAG pipeline."""
 
 import argparse
+from collections import deque
 import html
+import math
 import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from html.parser import HTMLParser
 from pathlib import Path
+from threading import Lock
+from time import monotonic
 from urllib.parse import parse_qs
 from urllib.parse import urlsplit
 
@@ -23,6 +27,22 @@ ALLOWED_MARKDOWN_TAGS = {
     "hr", "li", "ol", "p", "pre", "s", "strong", "table", "tbody", "td", "th", "thead", "tr", "ul",
 }
 VOID_MARKDOWN_TAGS = {"br", "hr"}
+RATE_LIMIT_WINDOW_SECONDS = 60 * 60
+RATE_LIMIT_MAX_QUESTIONS = 20
+_question_timestamps: deque[float] = deque()
+_question_timestamps_lock = Lock()
+
+
+def claim_question_slot() -> int | None:
+    """Apply a process-wide rolling limit; return retry seconds when full."""
+    now = monotonic()
+    with _question_timestamps_lock:
+        while _question_timestamps and now - _question_timestamps[0] >= RATE_LIMIT_WINDOW_SECONDS:
+            _question_timestamps.popleft()
+        if len(_question_timestamps) >= RATE_LIMIT_MAX_QUESTIONS:
+            return max(1, math.ceil(RATE_LIMIT_WINDOW_SECONDS - (now - _question_timestamps[0])))
+        _question_timestamps.append(now)
+    return None
 
 
 class MarkdownHTMLSanitizer(HTMLParser):
@@ -172,11 +192,13 @@ def render_results(question: str, source: str, placement: str) -> str:
 
 
 class RAGRequestHandler(BaseHTTPRequestHandler):
-    def send_html(self, body: bytes, status: int = 200) -> None:
+    def send_html(self, body: bytes, status: int = 200, retry_after: int | None = None) -> None:
         self.send_response(status)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
         self.send_header("X-Content-Type-Options", "nosniff")
+        if retry_after is not None:
+            self.send_header("Retry-After", str(retry_after))
         self.end_headers()
         self.wfile.write(body)
 
@@ -205,6 +227,14 @@ class RAGRequestHandler(BaseHTTPRequestHandler):
         if not question or len(question) > 2000 or source not in {"all", "study", "pyq"} or placement not in {"before", "after"}:
             output = '<p class="notice">Enter a question (up to 2,000 characters) and choose a valid source and passage position.</p>'
             self.send_html(render_page(question, source if source in {"all", "study", "pyq"} else "all", placement if placement in {"before", "after"} else "after", output), 400)
+            return
+        retry_after = claim_question_slot()
+        if retry_after is not None:
+            output = (
+                '<section><p class="notice">This demo has reached its limit of 20 questions per hour. '
+                'Please try again later.</p></section>'
+            )
+            self.send_html(render_page(question, source, placement, output), 429, retry_after=retry_after)
             return
         try:
             output = render_results(question, source, placement)
