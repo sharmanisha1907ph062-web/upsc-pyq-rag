@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="A project portfolio for UPSC PYQ RAG Assistant, a local retrieval-augmented study assistant with cited source passages.">
+  <title>UPSC PYQ RAG Assistant — Project Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="UPSC PYQ RAG Assistant home"><span class="wordmark-icon" aria-hidden="true">R</span><span>UPSC <span class="wordmark-muted">/</span> RAG</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="sr-only">Toggle navigation</span><span></span><span></span></button>
+    <nav class="nav" id="primary-nav" aria-label="Main navigation">
+      <a href="#overview">Overview</a><a href="#pipeline">Pipeline</a><a href="#architecture">Architecture</a><a href="#screenshots">Screenshots</a>
+      <a class="nav-cta" href="https://github.com/sharmanish1907ph062-web/upsc-pyq-rag" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> PROJECT PORTFOLIO <span class="eyebrow-divider">/</span> RETRIEVAL-AUGMENTED GENERATION</p>
+        <h1 id="hero-title">UPSC PYQ<br><span class="gradient-text">RAG Assistant</span></h1>
+        <p class="hero-lede">A local study assistant that searches previous-year questions and study notes, then grounds answers in passages you can review.</p>
+        <div class="hero-actions"><a class="button button-primary" href="https://github.com/sharmanish1907ph062-web/upsc-pyq-rag" target="_blank" rel="noopener noreferrer">Explore the repository <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#pipeline">See how it works <span aria-hidden="true">↓</span></a></div>
+        <p class="deployment-note"><span aria-hidden="true">◉</span> Python backend tested locally. Public deployment is pending.</p>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of a question connected to retrieved source passages and a grounded answer">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="visual-grid" aria-hidden="true"></div>
+        <div class="flow-card question-card"><span class="mini-label">QUESTION</span><p>What shaped Mauryan administration?</p><span class="card-mark">⌕</span></div>
+        <div class="flow-line line-one" aria-hidden="true"></div><div class="flow-line line-two" aria-hidden="true"></div>
+        <div class="flow-card source-card"><span class="mini-label">RETRIEVED SOURCE · P. 4</span><p>“Dhamma Mahamatras were appointed to...”</p><div class="source-bars" aria-hidden="true"><i></i><i></i><i></i></div></div>
+        <div class="flow-card answer-card"><span class="mini-label"><span class="tiny-dot"></span> GROUNDED RESPONSE</span><p>Review an answer alongside its source passages.</p><span class="answer-tag">SOURCE-LINKED</span></div>
+        <span class="visual-caption">A transparent path from question to evidence</span>
+      </div>
+      <div class="hero-index" aria-hidden="true"><span>01</span><i></i><span>07</span></div>
+    </section>
+
+    <section class="status-band" aria-label="Project status"><div class="section-wrap status-inner"><span class="status-label">CURRENT STATUS</span><p><strong>Interactive app:</strong> tested locally <span class="status-sep">·</span> <strong>Public deployment:</strong> pending</p><a href="#contact">Contact <span aria-hidden="true">↗</span></a></div></section>
+
+    <section class="content-section section-wrap" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading"><p class="eyebrow">01 <span>/</span> THE CONTEXT</p><h2 id="overview-title">Turning scattered study material<br><span class="muted-heading">into searchable evidence.</span></h2></div>
+      <div class="overview-grid">
+        <article class="overview-main"><span class="section-kicker">THE PROBLEM</span><p class="large-copy">Useful explanations and examples are spread across lengthy question papers and personal notes. Finding the right passage can interrupt revision.</p><p>This project explores a practical way to search those materials by meaning, then show the passages that informed an answer. The source remains visible so learners can inspect it for themselves.</p></article>
+        <aside class="overview-aside"><div class="aside-icon" aria-hidden="true">⌘</div><span class="section-kicker">THE APPROACH</span><h3>Retrieve first.<br>Answer with context.</h3><p>Question papers and notes are indexed locally. A question retrieves relevant chunks, which are sent as context for answer generation.</p><div class="aside-rule"></div><p class="aside-foot">Educational prototype · Not guaranteed exam guidance</p></aside>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-number">01</span><span class="feature-icon" aria-hidden="true">⌕</span><h3>Ask questions</h3><p>Submit a natural-language question through the local Python interface and choose which collection to search.</p></article>
+        <article class="feature-card"><span class="feature-number">02</span><span class="feature-icon" aria-hidden="true">⟡</span><h3>Retrieve relevant passages</h3><p>Semantic search surfaces related chunks from PYQs, study notes, or both.</p></article>
+        <article class="feature-card"><span class="feature-number">03</span><span class="feature-icon" aria-hidden="true">▤</span><h3>Review the sources</h3><p>Inspect retrieved text with source filenames and page details when available, alongside the generated response.</p></article>
+      </div>
+    </section>
+
+    <section class="pipeline-section" id="pipeline" aria-labelledby="pipeline-title"><div class="section-wrap">
+      <div class="section-heading"><p class="eyebrow">02 <span>/</span> THE PIPELINE</p><h2 id="pipeline-title">From source documents<br><span class="muted-heading">to a grounded response.</span></h2><p class="heading-intro">A retrieval-augmented generation workflow built around the materials being studied.</p></div>
+      <ol class="pipeline-list">
+        <li><span class="pipeline-index">01</span><span class="pipeline-icon" aria-hidden="true">▧</span><div><h3>Study documents</h3><p>UPSC question papers and personal notes</p></div><span class="pipeline-type">INPUT</span></li>
+        <li><span class="pipeline-index">02</span><span class="pipeline-icon" aria-hidden="true">◫</span><div><h3>Text extraction / OCR</h3><p>PyMuPDF extracts text; Tesseract handles scanned pages</p></div><span class="pipeline-type">INGESTION</span></li>
+        <li><span class="pipeline-index">03</span><span class="pipeline-icon" aria-hidden="true">▤</span><div><h3>Chunking</h3><p>Text is split into page-aware passages</p></div><span class="pipeline-type">PREPARE</span></li>
+        <li><span class="pipeline-index">04</span><span class="pipeline-icon" aria-hidden="true">⟡</span><div><h3>Embeddings</h3><p>Sentence Transformers · all-MiniLM-L6-v2</p></div><span class="pipeline-type">ENCODE</span></li>
+        <li><span class="pipeline-index">05</span><span class="pipeline-icon" aria-hidden="true">▦</span><div><h3>ChromaDB</h3><p>Persistent local vector store for source chunks</p></div><span class="pipeline-type">INDEX</span></li>
+        <li><span class="pipeline-index">06</span><span class="pipeline-icon" aria-hidden="true">⌕</span><div><h3>Retrieval</h3><p>Find relevant passages for the selected collection</p></div><span class="pipeline-type">SEARCH</span></li>
+        <li><span class="pipeline-index">07</span><span class="pipeline-icon" aria-hidden="true">✳</span><div><h3>Groq-generated answer</h3><p>Retrieved passages provide context for response generation</p></div><span class="pipeline-type">GENERATE</span></li>
+      </ol>
+      <p class="pipeline-caption"><span aria-hidden="true">↳</span> Retrieved source passages are shown with the answer for review.</p>
+    </div></section>
+
+    <section class="content-section section-wrap" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading"><p class="eyebrow">03 <span>/</span> SYSTEM DESIGN</p><h2 id="architecture-title">Two collections.<br><span class="muted-heading">One retrieval flow.</span></h2><p class="heading-intro">Source sets are prepared separately, then searched through the same question and retrieval path.</p></div>
+      <div class="architecture" role="img" aria-label="Architecture diagram: PYQ PDFs and study PDF or text files go through extraction, chunking, and embeddings into separate ChromaDB collections. A question is embedded, retrieves passages from a selected collection, and sends context to Groq for an answer shown with sources.">
+        <div class="arch-inputs"><div class="arch-node"><span class="arch-icon">▧</span><span><b>UPSC PYQ PDFs</b><small>Question papers</small></span></div><div class="arch-node"><span class="arch-icon">▤</span><span><b>Study PDF / TXT</b><small>Personal study notes</small></span></div></div>
+        <div class="arch-connectors" aria-hidden="true"><span></span><span></span></div>
+        <div class="arch-process"><span class="arch-label">INGEST + INDEX</span><div class="process-chain"><span>Extract / OCR</span><b>→</b><span>Chunk</span><b>→</b><span>Embed</span></div></div>
+        <div class="arch-arrow" aria-hidden="true">↓</div>
+        <div class="arch-store"><span class="arch-icon">▦</span><div><b>ChromaDB</b><small>upsc_pyq <span>·</span> study_material</small></div><span class="local-chip">LOCAL STORE</span></div>
+        <div class="arch-query"><div class="query-node"><span>⌕</span><b>User question</b><small>Embedded for search</small></div><span class="query-arrow" aria-hidden="true">→</span><div class="retrieval-node"><span>01</span><b>Retrieve passages</b><small>Selected collection(s)</small></div></div>
+        <div class="arch-arrow" aria-hidden="true">↓</div>
+        <div class="arch-output"><div class="groq-node"><span>✳</span><b>Groq</b><small>Answer generation</small></div><span class="output-arrow" aria-hidden="true">→</span><div class="result-node"><b>Answer + sources</b><small>Review retrieved passages</small></div></div>
+      </div>
+      <div class="stack-block"><div><p class="eyebrow">TOOLKIT <span>/</span> TECHNOLOGY STACK</p><h3>Built with familiar tools.</h3></div><ul class="stack-list" aria-label="Technology stack"><li>Python</li><li>PyMuPDF</li><li>Tesseract OCR</li><li>Sentence Transformers</li><li>ChromaDB</li><li>Groq</li><li>HTML · CSS · JavaScript</li></ul></div>
+    </section>
+
+    <section class="screenshots-section" id="screenshots" aria-labelledby="screenshots-title"><div class="section-wrap">
+      <div class="section-heading"><p class="eyebrow">04 <span>/</span> IN THE INTERFACE</p><h2 id="screenshots-title">Screenshots <span class="muted-heading">to come.</span></h2><p class="heading-intro">These clearly marked placeholders can be replaced with real application screenshots when available.</p></div>
+      <div class="screens-grid">
+        <figure class="screenshot-card"><div class="placeholder-art ui-placeholder"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i><span>Local study assistant</span></div><div class="mock-content"><b>Ask a question</b><div class="mock-input">What do Ashokan inscriptions tell us about Mauryan administration?</div><div class="mock-controls"><span>Study material and PYQ</span><span class="mock-button">Ask question</span></div></div></div><span class="placeholder-label">SCREENSHOT PLACEHOLDER</span></div><figcaption><b>01 / Question interface</b><span>Replace with a real screenshot of the local app.</span></figcaption></figure>
+        <figure class="screenshot-card"><div class="placeholder-art sources-placeholder"><div class="mock-result"><span>RESULTS</span><b>Retrieved passages</b><i></i><i></i><i></i><b class="mock-answer">Answer</b><i></i></div><span class="placeholder-label">SCREENSHOT PLACEHOLDER</span></div><figcaption><b>02 / Answer with source passages</b><span>Replace with a real screenshot showing citations.</span></figcaption></figure>
+      </div>
+    </div></section>
+
+    <section class="content-section section-wrap limits-section" id="next" aria-labelledby="next-title">
+      <div class="section-heading"><p class="eyebrow">05 <span>/</span> WHAT'S NEXT</p><h2 id="next-title">A useful prototype,<br><span class="muted-heading">with room to grow.</span></h2></div>
+      <div class="future-grid"><article><span class="section-kicker">KNOWN LIMITATIONS</span><ul><li>OCR can misread scanned text; source passages should be checked.</li><li>The current PYQ ingestion targets a configured PDF and Windows-specific Tesseract path.</li><li>Retrieval and answer quality depend on indexed materials; evaluation is still small.</li><li>The interactive Python application has not been publicly deployed.</li></ul></article><article><span class="section-kicker">POSSIBLE IMPROVEMENTS</span><ul><li>Broaden answer and citation evaluation across more topics.</li><li>Add configurable result counts and source filters.</li><li>Support selecting and managing additional source documents.</li><li>Harden the service for public hosting if deployment proceeds.</li></ul></article></div>
+      <div class="deployment-callout"><span class="callout-icon" aria-hidden="true">↗</span><p><b>The portfolio is static; the assistant is not.</b><br>The Python RAG application needs a separately hosted backend for interactive public use. This GitHub Pages site does not accept questions or generate answers.</p><span class="callout-status">PUBLIC BACKEND<br><strong>PENDING</strong></span></div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="section-wrap contact-inner"><div><p class="eyebrow">06 <span>/</span> CONTACT</p><h2 id="contact-title">Let's connect.</h2><p class="contact-copy">Contact details will be added here.</p></div><div class="contact-placeholder"><span class="contact-icon" aria-hidden="true">✳</span><span>CONTACT PLACEHOLDER</span><small>Add your preferred contact link or email.</small></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="section-wrap footer-inner"><a class="wordmark" href="#top"><span class="wordmark-icon" aria-hidden="true">R</span><span>UPSC <span class="wordmark-muted">/</span> RAG</span></a><p>Project portfolio · Static site for GitHub Pages</p><a href="https://github.com/sharmanish1907ph062-web/upsc-pyq-rag" target="_blank" rel="noopener noreferrer">Repository <span aria-hidden="true">↗</span></a></div><div class="section-wrap footer-bottom"><span>Python backend tested locally · Public deployment pending</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
