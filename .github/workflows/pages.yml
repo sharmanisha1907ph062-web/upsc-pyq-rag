@@ -3,9 +3,6 @@ name: Publish portfolio to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - "portfolio/**"
-      - ".github/workflows/pages.yml"
   workflow_dispatch:
 
 permissions:
