@@ -31,10 +31,7 @@ jobs:
       - name: Upload portfolio site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: |
-            portfolio/index.html
-            portfolio/style.css
-            portfolio/script.js
+          path: portfolio/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
